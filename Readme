@@ -2,14 +2,16 @@ A virtual supermarket using Object Oriented Programming.
 
 It is implemented as a Store class containing Customers and Departments:
 	- a Customer contains a ShoppingCart, a WishList and a Notification collection
-		- both the ShoppingCart class and the WishList class are based on the ItemList abstract class
-		- a Notification object is defined by its sending date, its type, the ID of the department
-		  issuing the Notification and the ID of the product the Notification was issued for
+		- both the ShoppingCart class and the WishList class are based on the ItemList
+		  abstract class
+		- a Notification object is defined by its sending date, its type, the ID of the
+		  department issuing the Notification and the ID of the product the Notification
+		  was issued for
 	
 	- there are four Department classes, each of them applying a different discount
-		- each Department has a list for customers(Customers who have items from that Department
-		  in its ShoppingCart) and observers(Customers who have items from that Department
-		  in its WishList)
+		- each Department has a list for customers(Customers who have items from that
+		  Department in its ShoppingCart) and observers(Customers who have items from
+		  that Department in its WishList)
 	
 Implemented patterns:
 	- Singleton pattern
@@ -21,10 +23,11 @@ Implemented patterns:
 	- Observer pattern
 		- each Customer that adds a Department's item to the WishList will be added to the
 		  respective Department's Observers list, so each time that Department modifies,
-		  removes or adds a new item, the Observers will be notified(using Notification objects),
-		  so the items in the customers' wishlists will automatically have their prices updated
-		  (or will automatically be removed if they no longer exist in that Department)
+		  removes or adds a new item, the Observers will be notified(using Notification
+		  objects), so the items in the customers' wishlists will automatically have their
+		  prices updated (or will automatically be removed if they no longer exist
+		  in that Department)
 		  
 	- Visitor pattern
-		- the ShoppingCart class implements the Visitor interface, so when prompted, each Department
-		  will apply its own discounts to its customers' shopping carts
+		- the ShoppingCart class implements the Visitor interface, so when prompted, each
+		  Department will apply its own discounts to its customers' shopping carts
